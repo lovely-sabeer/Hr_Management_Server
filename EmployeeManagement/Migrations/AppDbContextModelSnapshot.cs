@@ -54,7 +54,7 @@ namespace EmployeeManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("EmployeeManagement.Model.Attendence", b =>
@@ -89,7 +89,7 @@ namespace EmployeeManagement.Migrations
                     b.HasIndex("EmployeeId")
                         .IsUnique();
 
-                    b.ToTable("Attendences");
+                    b.ToTable("Attendences", (string)null);
                 });
 
             modelBuilder.Entity("EmployeeManagement.Model.Employee", b =>
@@ -148,7 +148,7 @@ namespace EmployeeManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("EmployeeManagement.Model.Payment", b =>
@@ -185,7 +185,7 @@ namespace EmployeeManagement.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("EmployeeManagement.Model.Attendence", b =>

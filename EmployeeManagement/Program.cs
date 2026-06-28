@@ -15,8 +15,16 @@ builder.Services.AddCors(options =>
     });
 });
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
-builder.WebHost.UseUrls($"http://*:{port}");
+if (!builder.Environment.IsDevelopment())
+{
+    var port = Environment.GetEnvironmentVariable("PORT");
+
+    if (!string.IsNullOrEmpty(port))
+    {
+        builder.WebHost.UseUrls($"http://*:{port}");
+    }
+}
+
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("DefaultConnection is missing.");
